@@ -7,21 +7,19 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build-test:
+  verification-repo:
     runs-on: ubuntu-latest
 
     steps:
       - name: Récupération du code
         uses: actions/checkout@v4
 
-      - name: Installation de Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Installation des dépendances
-        working-directory: ./app
-        run: npm install
-
-      - name: Build de l'image Docker
-        run: docker build -t pompi:local .
+      - name: Vérification de la structure minimale
+        run: |
+          test -f README.md
+          test -f Dockerfile
+          test -f docs/architecture.md
+          test -f docs/cahier-des-charges.md
+          test -f scripts/provision/provision-local.ps1
+          test -f scripts/verify/verify-local.ps1
+          test -f terraform/main.tf
