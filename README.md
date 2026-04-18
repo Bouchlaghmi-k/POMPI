@@ -46,6 +46,9 @@ L’architecture actuelle de POMPI repose sur un dépôt GitHub structuré centr
 6. d’intégrer une logique GitOps avec Argo CD ;
 7. de superviser l’application et son environnement.
 
+## Modélisation
+- Diagramme de cas d’utilisation : docs/use-case-diagram.md
+
 ## Avancement actuel
 - [x] Dépôt GitHub créé
 - [x] Structure initiale du projet créée
